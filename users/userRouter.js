@@ -7,8 +7,8 @@ const router = express.Router();
 router.post('/', validateUser, (req, res) => {
   const userInfo = req.body;
   Users.insert(userInfo)
-        .then(post => {
-            res.status(201).json(post);
+        .then(user => {
+            res.status(201).json(user);
         })
         .catch(err => {
             console.log(err)
